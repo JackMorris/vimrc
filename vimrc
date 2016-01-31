@@ -9,6 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " VUNDLE HELP
 "
@@ -24,6 +26,7 @@ filetype plugin indent on
 " Appearance
 set number
 syntax on
+let g:vim_markdown_folding_disabled=1 " Disable markdown folding
 
 " Editing Settings
 set ignorecase
