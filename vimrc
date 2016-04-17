@@ -14,10 +14,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
     " Active Vundle itself
 
-Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'godlygeek/tabular'
-    " Extras
+Plugin 'kien/ctrlp.vim'
+    " For navigation
+    " NerdTree - <leader>n
+    "            Navigate the file tree
+    " CtrlP -    <leader>pf = files, <leader>pb = buffers, <leader>pm = mixed
+    "            Fuzzy navigator for a variety of things
 
 Plugin 'plasticboy/vim-markdown'
 Plugin 'fatih/vim-go'
@@ -47,23 +50,44 @@ filetype plugin indent on
 " Appearance
 set number
 syntax on
-let g:vim_markdown_folding_disabled=1 " Disable markdown folding
-
 set background=dark
 colorscheme solarized
 
 " Editing Settings
-set ignorecase
 set mouse=a
+set backspace=indent,eol,start
+set clipboard=unnamed
+
+" Search Settings
+set hlsearch
+set ignorecase
 
 " Code Format
 set encoding=utf-8
 set tabstop=4 shiftwidth=4 expandtab " Use 4 spaces for tab
+set expandtab
+set autoindent
 let html_no_rendering=1 " Prevent underlines in html files
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" CtrlP
+nmap <leader>pf :CtrlP<cr>
+nmap <leader>pb :CtrlPBuffer<cr>
+nmap <leader>pm :CtrlPMixed<cr>
+
+" Sane split handling
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+set splitbelow
+set splitright
+
+" Markdown
+let g:vim_markdown_folding_disabled=1 " Disable markdown folding
 
 " Go
 let g:go_highlight_functions = 1
