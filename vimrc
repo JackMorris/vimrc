@@ -102,6 +102,11 @@ nnoremap <C-L> <C-W><C-L>
 set splitbelow
 set splitright
 
+" Sane pasting
+" p now pastes with correct indentation - ctrl-P for previous behaviour
+nnoremap p ]p       
+nnoremap <c-p> p
+
 " Markdown
 let g:vim_markdown_folding_disabled=1 " Disable markdown folding
 
