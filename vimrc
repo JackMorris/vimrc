@@ -51,6 +51,7 @@ filetype plugin indent on
 set number
 syntax on
 set background=dark
+set colorcolumn=100
 colorscheme solarized
 
 " Editing Settings
