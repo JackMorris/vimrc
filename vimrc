@@ -65,10 +65,24 @@ set ignorecase
 
 " Code Format
 set encoding=utf-8
-set tabstop=4 shiftwidth=4 expandtab " Use 4 spaces for tab
-set expandtab
 set autoindent
 let html_no_rendering=1 " Prevent underlines in html files
+
+" Tabbing
+set tabstop=4 softtabstop=4 shiftwidth=4 " 4 spaces for tab.
+set expandtab
+
+" Stab command lets you set all tab values at once
+command! -nargs=* Stab call Stab()
+function! Stab()
+    let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+    if l:tabstop > 0
+        let &l:sts = l:tabstop
+        let &l:ts = l:tabstop
+        let &l:sw = l:tabstop
+    endif
+    call SummarizeTabs()
+endfunction
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
