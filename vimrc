@@ -85,14 +85,19 @@ function! Stab()
     call SummarizeTabs()
 endfunction
 
-" NERDTree
-map <leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Some shortcuts
+let mapleader=","
+nnoremap <leader><space> :noh<cr>
+noremap <leader>n :NERDTreeToggle<CR>
+noremap <leader>pf :CtrlP<cr>
+noremap <leader>pb :CtrlPBuffer<cr>
+noremap <leader>pm :CtrlPMixed<cr>
+noremap <leader>v <C-w>v<C-w>l
+noremap <leader>h <C-w>s<C-w>l
 
-" CtrlP
-nmap <leader>pf :CtrlP<cr>
-nmap <leader>pb :CtrlPBuffer<cr>
-nmap <leader>pm :CtrlPMixed<cr>
+" NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeQuitOnOpen=1
 
 " Sane split handling
 nnoremap <C-H> <C-W><C-H>
