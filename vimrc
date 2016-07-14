@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set modelines=0 " Security exploits!
 
 " ~~~~~~~~~~~~~~~~
 " ~~~ PLUGINGS ~~~
