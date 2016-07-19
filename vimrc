@@ -82,7 +82,6 @@ function! Stab()
         let &l:ts = l:tabstop
         let &l:sw = l:tabstop
     endif
-    call SummarizeTabs()
 endfunction
 
 " Some shortcuts
