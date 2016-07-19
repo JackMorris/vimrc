@@ -33,6 +33,11 @@ Plugin 'altercation/vim-colors-solarized'
     " `export TERM=xterm-256color` in .zshrc
     " `set -g default-terminal "screen-256color"` in .tmux.conf
 
+Plugin 'elzr/vim-json'
+    " JSON highlighting - we disable hiding double quotes
+    " since it's jarring to navigate through. This is done
+    " below.
+
 " VUNDLE HELP
 "
 " :PluginList       - List plugins
@@ -97,6 +102,9 @@ noremap <leader>h <C-w>s<C-w>l
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeQuitOnOpen=1
+
+" JSON
+let g:vim_json_syntax_conceal=0
 
 " Sane split handling
 nnoremap <C-H> <C-W><C-H>
